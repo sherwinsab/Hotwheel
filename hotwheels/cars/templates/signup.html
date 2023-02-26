@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HotWheels - Home Buy Vechiles,Service Market Place</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}"/>
+<!--===============================================================================================-->
+<link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet"> 
+       
+        <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">					
+        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/shortcodes.css' %}">
+        <link rel="stylesheet" href="{% static 'css/thumbnails_bottom_center.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+<style>
+	body {
+	  background-color: #f4f4f4;
+	}
+	form {
+	  max-width: 500px;
+	  margin: 0 auto;
+	  padding: 20px;
+	  background-color: white;
+	  border: 1px solid #ccc;
+	  border-radius: 10px;
+	}
+	h1 {
+	  text-align: center;
+	  margin-bottom: 30px;
+	}
+	label {
+	  display: block;
+	  margin-bottom: 10px;
+	}
+	input[type="text"], input[type="email"], input[type="password"] {
+	  width: 100%;
+	  padding: 5px 15px;
+	  margin-bottom: 10px;
+	  box-sizing: border-box;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	}
+	input[type="submit"] {
+	  width: 100%;
+	  background-color: #4e81da;
+	  color: white;
+	  padding: 14px 20px;
+	  margin-bottom: 20px;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	}
+	input[type="submit"]:hover {
+	  background-color: #e7d83e;
+	}
+  </style>
+</head>
+<body>
+
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags %}  
+            <script>alert("{{ message }}")</script> 
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+
+	<div class="content-wrap">
+	<h1>Sign up</h1>
+	<form action="{% url 'signup' %}" method="post" onsubmit="return validateInput()">
+		{% csrf_token %}
+		<label for="first-name">First Name:</label><br>
+		<input type="text" placeholder="first name"  name="first_name" onkeyup="validateInput(this)" required><br>
+		<label for="last-name">Last Name:</label><br>
+		<input type="text" placeholder="last name"  name="last_name"  onkeyup="validateInput(this)" required><br>
+		<label for="username">Username:</label><br>
+		<input type="text" placeholder="username" name="username" onkeyup="validateInput(this)" required><br>
+		<label for="email">Email:</label><br>
+		<input type="email" placeholder="email" name="email"  onkeyup="validateInput(this)" required><br>
+		<label for="password">Password:</label><br>
+		<input type="password" placeholder="password" name="password" onkeyup="validateInput(this)" required><br>
+		<label for="confirm_password">Confirm Password:</label><br>
+		<input type="password" placeholder="confirm password" name="confirm_password" onkeyup="validateInput(this)" required><br><br>
+		<input type="submit" value="Submit">
+	  </form>
+	  <p style="text-align:center;">Have Account?<a href="{% url 'signin' %}">Login</a><p> 
+	</div>
+	  
+<script>
+function validateInput(input) {
+
+  var value = input.value;
+
+ 
+  if (input.name == "first_name" || input.name == "last_name") {
+   
+    if (/^[a-zA-Z]+$/.test(value)) {
+   
+      input.setCustomValidity("");
+    } else {
+     
+      input.setCustomValidity("Please enter a valid name (letters only)");
+    }
+  }
+  if (input.name == "username") {
+ 
+    if (/^[a-zA-Z0-9]*$/.test(value)) {
+   
+      input.setCustomValidity("");
+    } else {
+    
+      input.setCustomValidity("Please enter a valid user name (letters and number only)");
+    }
+  }
+
+
+  if (input.name == "email") {
+   
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+    
+      input.setCustomValidity("");
+    } else {
+  
+      input.setCustomValidity("Please enter a valid email address (ex@gmail.com)");
+    }
+  }
+
+ 
+  if (input.name == "password") {
+   
+    if ( /(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[@])(?=.*[a-z]).*$/.test(value)) {
+  
+      input.setCustomValidity("");
+    } else {
+      
+      input.setCustomValidity("Please enter a valid password (at least 8 characters, one uppercase letter, one lowercase letter, one number, one special character )");
+    }
+  }
+
+  
+  if (input.name == "confirm_password") {
+    
+    var password = document.getElementById("password").value;
+   
+    if (value == password) {
+     
+      input.setCustomValidity("");
+    } else {
+      
+      input.setCustomValidity("The password and confirm password fields must match");
+    }
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+    <!-- Author Meta -->
+    <meta name="author" content="">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>HotWheels - Home Buy Vechiles,Service Market Place</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">					
+        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"> </script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"> </script>
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            
+            .fa-star {
+                font-size : 50px;
+                align-content: center;
+            }
+             
+            </style>
+    </head>
+    <body>
+
+          <!-- #header Start-->
+          <header id="header">
+              <div class="header-top bg-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-xs-12 hide_column">
+                            <div class="header-top-menu">
+                                <ul>
+                                    <!-- <li><a href="#">Partners</a></li>
+                                    <li><a href="#">Community</a></li>
+                                    <li><a href="sell_a_product.html">Become A Seller</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-12 col-xs-12">
+                            <div class="header-top-right text-right">
+                                <ul class="account">	
+                                    <li>
+                                        <a href="#">
+                                            <img src="{% static 'img/boogyman.png' %}" alt="">
+                                            NAME  <span> {{user.first_name}}
+                                            <i class="fa fa-angle-down"></i></span>
+                                        </a>
+                                        <ul class="profile">
+                                            <li><a href="{% url 'userprofile' %}">User Profile</a></li>
+                                            <!-- <li><a href="#">Upload Products</a></li> -->
+                                            <!-- <li><a href="#">Favourite Products</a></li> -->
+                                            <!-- <li><a href="#">Change Password</a></li> -->
+                                            <li><a href="{% url 'shopping_cart' %}">Manage Products</a></li>
+                                            <!-- <li><a href="#">Notifications</a></li> -->
+                                            <!-- <li><a href="#">Messages</a></li> -->
+                                            <li><a href="{% url 'shopping_cart' %}">Shopping Cart</a></li>
+                                            <!-- <li><a href="#">Withdraw</a></li> -->
+                                            <li><a href="{% url 'logout' %}">Sign Out</a></li>
+                                        </ul>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!-- <ul class="notification_icons">
+                                    <li>
+                                        <a href="#"><i class="fa fa-bell-o"></i><span class="number">11</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-envelope-o"></i><span class="number">5</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-basket"></i>
+                                        </a>
+                                    </li> 
+
+                                </ul> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="row align-items-center d-flex">
+                        <div class="col-lg-2 col-md-2">
+                            <div id="logo">
+                                <a href="index.html"><img src="#" alt="" /></a>
+                            </div>
+                        </div>
+                           <div class="col-lg-10 col-md-2">				
+                          <nav id="nav-menu-container">
+                            <ul class="nav-menu float-right">
+                              <li class="menu-has-children"><a href="{% url 'index' %}">Home</a>
+                              </li>
+                              <li class="menu-has-children"><a href="">Pages</a>
+                                <ul>
+                                    <li><a href="">Product Listing</a></li>
+                                    <li><a href="">Product Listing Detail</a></li>
+                                    <!-- <li><a href="search.html">search</a></li> -->
+                                    <!-- <li><a href="upload_products.html">Upload Products</a></li> -->
+                                    <!-- <li><a href="favourite_products.html">Favourite Products</a></li> -->
+                                    <li><a href="">Signin Page</a></li>
+                                    <li><a href="">Signup Page</a></li>					
+                                    <li><a href="">Terms & Conditions</a></li>
+                                    <li><a href="">Privacy Policy</a></li>
+                                    <li><a href="">404 Page</a></li>
+                                </ul>
+                              </li>
+                              <!-- <li class="menu-has-children"><a href="#">About</a> -->
+                                <!-- about_us.html -->
+                              </li>  
+                              <!-- <li class="menu-has-children"><a href="#">Services</a> -->
+                                <!-- services.html -->
+                              </li>
+                              <!-- <li class="menu-has-children"><a href="#">Blog</a> -->
+                                <!-- blog_home.html -->
+                                  <ul>
+                                    <li><a href="#">Blog Page</a></li>
+                                    <!-- blog_home.html -->
+                                    <li><a href="#">Blog Detail</a></li>
+                                    <!-- blog_single.html -->
+                                </ul>
+                              </li>
+                              
+                              <!-- <li class="menu-has-children"><a href="contact.html">Contact</a></li> -->
+                              <!-- <li class="menu-has-children"><a href="#" class="rounded ml-3 text-white sell-btn">My Cart</a> -->
+                              </li>			        	          
+                            </ul>
+                          </nav><!-- #nav-menu-container -->
+                      </div>	    		
+                    </div>
+                </div>
+            </div>
+          </header><!-- #header -->
+
+
+        <!-- start banner Area -->
+        <section class="banner-area relative" id="home">	
+            <div class="overlay overlay-bg"></div>
+            <div class="container">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="about-content col-lg-12">
+                        <h1 class="text-white">
+                            Shopping Cart			
+                        </h1>	
+                        <p class="text-white link-nav mt-3"><a href="{% url 'index' %}">Return To Home Page </a>  <span class="lnr lnr-arrow-right"></span></p>
+                    </div>											
+                </div>
+            </div>
+        </section>
+        <!-- End banner Area -->	
+
+        <!-- Start Shopping Cart Area -->
+        <section class="cart_area mb-30 pt-120">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="cart_content col-lg-10">
+                        <div class="cart-top-border">
+                            <h2 class="mb-30">Shopping Cart</h2>
+                            {% if Order %}
+                            <h3 class="generic-blockquote mt-3">{{a}} <i class="fa fa-frown-o" aria-hidden="true"></i></h3>
+                            {% else %}
+                            {% for Order in customer %}
+                            <div class="progress-table-wrap">
+                                <div class="progress-table">
+                                    <div class="table-head">
+                                        <div class="image">Image</div>
+                                        <div class="image">Car Name</div>
+                                        <div class="image">Company</div>
+                                        <div class="image">Type</div>
+                                        <div class="image">Price</div>
+                                        <div class="image">Booked On</div>
+                                        <div class="image">Accessories</div>
+                                        <div class="image">Cancel Booking</div>
+                                        
+                                        <!-- remove -->
+                                    </div>
+                                    <div class="table-row">
+                                        <div class="image"> <img src="{% static 'img/shopping-cart1.jpg' %}" alt="flag"></div>
+                                        <div class="image">{{Order.carnameid}}</div>
+                                        <div class="image">{{carscompanynames}}</div>
+                                        <div class="image">{{cartypenames}}</div>
+                                        <div class="image">₹{{Order.total}}</div>
+                                        <div class="image">{{Order.Date_of_booking}}</div>
+                                        <div class="image">{{a}}</div>
+                                        <div class="image"><a href="{% url 'cancelorder' oid=Order.id %}"><i class="fa fa-window-close" aria-hidden="true" style="font-size:15px;"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                        <br><div><p >Dear {{user.first_name}} {{user.last_name}} You Can Download the Order Details By Clicking The Download Link.
+                            <button style="float: right;background-color: red;border-radius: 5%;" ><a href="{% url 'shopping_cart_pdf' %}" style="color: white;">Download Pdf</button></a></p></div>
+                </div>	
+            </div>	
+        </section>
+       
+        <!-- End Shopping Cart Area -->
+        <section class="cart_area mb-30 pt-10">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="cart_content col-lg-10">
+                        <form action="{% url 'rating' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="container">
+                            <h2 style="margin-top: 50px;">Rate The Car</h2>
+                            <div class="con">
+                                <h3 style="margin-top : 80px; color: green;">Rate our product :-</h3>
+                                
+                                    
+                                <input type="radio" name="rating" value="1" id="st1" style="display:none" />
+                                <label for="st1">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </label>
+                                <input type="radio" name="rating" value="2" id="st2" style="display:none" />
+                                <label for="st2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </label>
+                                <input type="radio" name="rating" value="3" id="st3" style="display:none" />
+                                <label for="st3">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </label>
+                                <input type="radio" name="rating" value="4" id="st4" style="display:none" />
+                                <label for="st4">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </label>
+                                <input type="radio" name="rating" value="5" id="st5" style="display:none" />
+                                <label for="st5">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-end">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </div>
+                        
+                        <script>
+                             $(document).ready(function () {
+                                $("#st1").click(function () {
+                                    $("label i").css("color", "black");
+                                    $("#st1 + label i").css("color", "yellow");
+                                    console.log($("#st1").attr("value"));
+                                });
+                                $("#st2").click(function () {
+                                    $("label i").css("color", "black");
+                                    $("#st1 + label i, #st2 + label i").css("color", "yellow");
+                                    console.log($("#st2").attr("value"));
+                                });
+                                $("#st3").click(function () {
+                                    $("label i").css("color", "black")
+                                    $("#st1 + label i, #st2 + label i, #st3 + label i").css("color", "yellow");
+                                    console.log($("#st3").attr("value"));
+                                });
+                                $("#st4").click(function () {
+                                    $("label i").css("color", "black");
+                                    $("#st1 + label i, #st2 + label i, #st3 + label i, #st4 + label i").css("color", "yellow");
+                                    console.log($("#st4").attr("value"));
+                                });
+                                $("#st5").click(function () {
+                                    $("label i").css("color", "black");
+                                    $("#st1 + label i, #st2 + label i, #st3 + label i, #st4 + label i, #st5 + label i").css("color", "yellow");
+                                    console.log($("#st5").attr("value"));
+                                });
+                            });
+                        </script>
+                        </form>
+        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-posts-area pb-120">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="cart_content col-lg-10">
+                        <div class="row">
+                            <div class="col-lg-8 post-list blog-post-list">
+                                <div class="single-widget category-widget">
+                                    <h3 class="title text-center">Pay Here</h3>
+                                    <blockquote class="generic-blockquote mt-3" style="font-weight: bold;">
+                                        Pay The Booking Amount In 10 hour Or Your Order Will be Cancelled. @ ❝Delivery Time And Tax Is Different Every Vechile❞.
+                                    </blockquote>
+                                    <ul>
+                                        <li style="font-size: x-large;"><h3>Car Price</h3><br><span>₹</span>{{priceof}}</li>
+                                        {% for Order in customer %}
+                                        <!-- <li style="font-size: x-large;"><h3>Tax Amount</h3><br><span>₹</span>{{Order.insurance}}</li> -->
+                                        <li style="font-size: x-large;"><h3>Total Amount</h3><br><span>₹</span>{{Order.total}}</li>
+                                        {% endfor %}
+                                        <li><a href="{% url 'checkout' %}"><button class="btn btn-success btn-block">Pay Here</button></a></li>
+                                    </ul>
+                                </div>																					
+                            </div>
+                            <div class="col-lg-4 sidebar">
+                                <div class="single-widget search-widget mb-0">
+                                    <h4 class="title">Mortgage Calculator</h4>
+                                    <input type="text" placeholder="Value" class="mb-3 form-control">
+                                    <input type="text" placeholder="Value" class="mb-3 form-control">
+                                    <input type="text" placeholder="Value" class="mb-3 form-control">
+                                    <button type="submit" class="btn-block btn btn-danger">Calculate</button>								
+                                </div>			
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        </section>
+        <section class="blog-posts-area pb-120">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="cart_content col-lg-10">
+                        <div class="row">
+                            <h1>Track Order Here <a href="{% url 'tracking_order' %}">Click Here</a></h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        </section>
+        <!-- End blog-posts Area -->
+
+        <!-- start footer Area -->		
+        <footer class="footer-area footer-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3  col-md-3 col-sm-6">
+                        <div class="single-footer-widget newsletter">
+                            <img class="w-50 img-fluid mb-3" src="" alt="">
+                            <p>HotWheels.</p>
+                            <ul class="social-footer">
+                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3  col-md-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6>Useful Links</h6>
+                            <ul class="footer-nav">
+                                <li><a href="">Change</a></li>
+                                <li><a href="">Replacement</a></li>
+                                <li><a href="">Contact Us</a></li>
+                                <li><a href="">Pre-Purchase</a></li>
+                                <li><a href="">Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3  col-md-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6>Our Service</h6>
+                            <ul class="footer-nav">
+                                <li><a href="">Privacy Policy</a></li>
+                                <li><a href="">About Us</a></li>
+                                <li><a href="">Terms & Conditions</a></li>
+                                <li><a href="">Support</a></li>
+                                <li><a href="">About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3  col-md-3 col-sm-6">
+                        <div class="single-footer-widget mail-chimp">
+                            <h6 class="mb-20">Keep In Touch</h6>
+                            <ul class="footer-nav">
+                                <li>
+                                <strong><i class="fa fa-map-marker"></i></strong><span class="pl-2">1111 Nnn Nnn, Nnn Nnn</span>
+                                </li>
+                                <li>
+                                <strong><i class="fa fa-mobile"></i></strong><span class="pl-2">+00 00 000 000</span>
+                                </li>
+                                <li>
+                                <strong><i class="fa fa-envelope-o"></i></strong><span class="pl-2"><a href="#">ex@example.com</a></span>
+                                </li>
+                            </ul>
+                            <div class="section_form">
+                                    <div class="col-auto">
+                                      <div class="input-group mb-2">
+                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter Your Email">
+                                         <div class="input-group-prepend">
+                                          <div class="input-group-text"><i class="fa fa-paper-plane"></i></div>
+                                        </div>
+                                      </div>
+                                    </div>  
+                                </div>
+                        </div>
+                    </div>						
+                </div>	
+            </div>
+        </footer>
+        <div class="copyright1">
+            <div class="container">
+                <div class="row"> 
+                    <div class="col-md-6 col-sm-6 col-12">
+                        <div class="bottom_footer_info">
+                            <span>&copy;Copyright All rights reserved &copy;<script>document.write(new Date().getFullYear())</script> HotWheels</span>
+                            <!-- <p> &copy; Copyright 2018. All rights reserved</p> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-12">
+                        <div class="bottom_footer_logo">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#">Privacy policy &nbsp;|</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#">Terms And Condition &nbsp;|</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End footer Area --> 				
+
+        <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>			
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+        <script src="{% static 'js/easing.min.js' %}"></script>			
+        <script src="{% static 'js/hoverIntent.js' %}"></script>
+        <script src="{% static 'js/superfish.min.js' %}"></script>	
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>	
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>			
+        <script src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>			
+        <script src="{% static 'js/parallax.min.js' %}"></script>		
+        <script src="{% static 'js/mail-script.js' %}"></script>	
+        <script src="{% static 'js/main.js' %}"></script>	
+    </body>
+</html>
+
+
+
